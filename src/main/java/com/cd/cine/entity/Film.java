@@ -3,6 +3,8 @@ package com.cd.cine.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "films")
 @Getter
@@ -19,4 +21,7 @@ public class Film {
   private String name;
 
   private String description;
+
+  @OneToMany(mappedBy = "film")
+  private List<Schedule> schedules;
 }
