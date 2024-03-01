@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +22,7 @@ public class Schedule {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private Date date;
+  private LocalDateTime date;
 
   @OneToMany(mappedBy = "schedule")
   private Set<Ticket> ticket = new HashSet<>();
